@@ -1,0 +1,56 @@
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.12'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+java {
+    sourceCompatibility = '21'
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+}
+
+group = 'cl.tempo'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-logging'
+
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+    implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.postgresql:postgresql'
+
+    implementation 'org.springframework.retry:spring-retry'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'io.opentelemetry:opentelemetry-api:1.28.0'
+    implementation 'io.opentelemetry:opentelemetry-sdk:1.28.0'
+    implementation 'io.opentelemetry:opentelemetry-exporter-logging:1.28.0'
+    implementation 'io.opentelemetry:opentelemetry-semconv:1.28.0-alpha'
+
+    implementation group: 'org.apache.commons', name: 'commons-text', version: '1.10.0'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.14.0'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+}
+
+test {
+    useJUnitPlatform()
+}
