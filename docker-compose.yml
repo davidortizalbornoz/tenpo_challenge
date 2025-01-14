@@ -2,7 +2,7 @@ version: '3.8'
 services:
   app:
     container_name: app-tempo-challenge
-    image: tempo-challenge:1.0.0
+    image: davidortizalbornoz/tempo-challenge:1.0.0
     networks:
       - tempo-challenge-red
     ports:
@@ -13,7 +13,7 @@ services:
 
   pgadmin_container_local:
     container_name: pgadmin_container_local
-    image: dpage/pgadmin4:latest
+    image: dpage/pgadmin4:7.8
     networks:
       - tempo-challenge-red
     ports:
@@ -36,7 +36,7 @@ services:
 
   postgres_container_local:
     container_name: postgres_container_local
-    image: postgres:latest
+    image: postgres:16-alpine3.20
     networks:
       - tempo-challenge-red
     ports:
