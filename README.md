@@ -29,7 +29,7 @@ Esto iniciará los contenedores:
 * Postgres: 16
 * PgAdmin4: 7.8
 
-<img height="200" width="300" src="/./img/mycontainers.jpg" />
+<img height="200" width="400" src="/./img/mycontainers.jpg" />
 
 ## Contexto
 
@@ -52,4 +52,4 @@ Las claves que incorporaremos a Redis son las siguientes:
 * LATEST = 35 (No tiene tiempo de expiración)
 
 
-<img height="250" width="350" src="/./img/diagrama_feed_cache.jpg" />
+<img height="250" width="450" src="/./img/diagrama_feed_cache.jpg" />
