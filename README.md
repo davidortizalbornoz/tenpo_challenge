@@ -29,5 +29,27 @@ Esto iniciará los contenedores:
 * Postgres: 16
 * PgAdmin4: 7.8
 
-![](./img/mycontainers.jpg)
+<img height="100" width="200" src="/./img/mycontainers.jpg" />
 
+## Contexto
+
+### Retroalimentación de caché
+
+La instrucción dice textualmente:
+
+_**El porcentaje obtenido del servicio externo debe almacenarse en memoria (caché) y considerarse válido durante 30 minutos**_
+
+¿¿ Que hice al respecto ??:
+
+1. Al momento de arranque del aplicativo, ejecutará una llamada al servicio Mock para obtener el porcentaje a aplicar.
+2. Incorporé adicionalmente un proceso cíclico que se ejecutará cada 30 minutos para obtener el porcentaje desde el servicio Mock.
+3. En cada llamada al servicio Mock este actualizará las claves en Redis:
+4. Esto mantendrá siempre un flujo de actualización constante del caché 
+
+Las claves que incorporaremos a Redis son las siguientes:
+
+* FIXED_AMOUNT_TENPO = 35 (Expira en 30 minutos)
+* LATEST = 35 (No tiene tiempo de expiración)
+
+
+<img height="150" width="250" src="/./img/diagrama_feed_cache.jpg" />
