@@ -86,7 +86,7 @@ Recordemos que existe un proceso ciclico que se ejecuta cada 30 minutos para obt
 
 ## Ejecución de endpoints del API
 
-Para esto he incluido una colección postman con un ejemplo de ejecución de cada operación:
+Para esto he incluido una [colección postman](https://github.com/davidortizalbornoz/tenpo_challenge/blob/main/postman/Tempo.postman_collection.json) con un ejemplo de ejecución de cada operación:
 
 * POST /api/calculate
 * GET /api/getHistoryCalls
